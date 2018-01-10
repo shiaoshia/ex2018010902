@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     String idLove = "LOVE";
     NotificationChannel channelLove;
     NotificationManager nm;
+    final int NOTIFICATION_ID = 321312;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +68,11 @@ public class MainActivity extends AppCompatActivity {
         builder.setContentIntent(pi);
 
         Notification notify = builder.build();
-        nm.notify(1,notify);
+        nm.notify(NOTIFICATION_ID,notify);
+    }
+
+    public void click02(View v) {
+        nm.cancel(NOTIFICATION_ID); //取消即時訊息
     }
 }
 
